@@ -47,9 +47,14 @@ function! NASMSET()
 	nnoremap <buffer> <F5> :w<CR>:!clear; nasm -f elf %; ld -m elf_i386 -o %:r %:r.o; ./%:r<CR>
 endfunction
 
+function! PHPSET()
+	nnoremap <buffer> <F5> :w<CR>:!clear; php %<CR>
+endfunction
+
 autocmd FileType python call PYTHONSET()
 autocmd FileType sh call BASHSET()
 autocmd FileType asm call NASMSET()
+autocmd FileType php call PHPSET()
 
 "
 " Coc-nvim
